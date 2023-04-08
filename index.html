@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery practice mode</title>
+
+    <!-- css file link -->
+    <link rel="stylesheet" href="tailwindcss/index.css">
+
+</head>
+
+<body>
+    <!-- jQuery documentation apply -->
+    <div class="container m-auto p-5">
+
+        <h1 class="header text-center font-bold text-2xl underline">
+            jQuery practice with documentation
+        </h1>
+
+        <!-- font, color, size, events, position, hover, border, input, element, bg, button, focus, compatible devices -->
+        <h1 class="font-bold mt-5">
+            What's your name?
+
+            <input class="input border border-black block rounded" type="text" placeholder="Name">
+
+            <button
+                class="button text-white text-xl rounded border border-red-700 hover:bg-red-700 bg-gray-900 p-0.5 mt-1">
+                select
+            </button>
+
+        </h1>
+
+        <h4 id="nameofList" class="nameofList mt-5 font-bold">
+            # List of Name:
+            <ul type="number" class="AllName">
+                Unknown ?
+            </ul>
+        </h4>
+
+        <p class="mt-5 font-sans text-xl">
+            Hello, jQuery! mainly what's your major work? How have you been created?
+        </p>
+        <button class="myBtn border border-black p-2 rounded mt-2">
+            Question Hide
+        </button>
+
+        <strong class="block rounded-xl text-2xl text-center py-5 mt-10 bg-blue-400">
+            Password checkout
+        </strong>
+
+        <form>
+            <label>
+                Password
+            </label>
+            <input class="input1 border border-black rounded block" placeholder="password" type="password">
+
+            <label>
+                Re-type password
+            </label>
+            <input class="input2 border border-black rounded block" placeholder="password" type="password">
+
+            <button class="buttons border border-black p-1 rounded mt-2 text-white bg-black">
+                Login
+            </button>
+        </form>
+
+
+        <div class="p mt-10 bg-red-600 p-5 rounded text-justify">
+            jQuery is a popular and widely used JavaScript library that simplifies HTML document traversal, event
+            handling, and animation. It was released in 2006 by John Resig and quickly gained popularity due to its ease
+            of use and ability to simplify complex JavaScript tasks.
+
+            jQuery allows developers to write less code while achieving the same results as traditional JavaScript
+            coding methods. It simplifies many tasks, such as selecting and manipulating HTML elements, handling events,
+            and creating animations.
+
+            Although jQuery is still widely used, it has become less popular in recent years due to the rise of modern
+            JavaScript frameworks and libraries, such as React and Angular. Nonetheless, many legacy projects still rely
+            on jQuery and it continues to be an important tool for web development.
+        </div>
+        <button class="buttons2 mt-2 border border-black p-1 bg-teal-600 text-white border-none rounded font-bold">
+            slide text
+        </button>
+
+        <div class="p-next mt-10 p-3 bg-black text-white rounded">
+            this is our animate object and property declare and if we can create a style sheet here.
+        </div>
+        <button class="buttons3 mt-2 bg-black rounded text-white border-black p-1">
+            animate
+        </button>
+
+    </div>
+    <!-- content delivery network -->
+    <!-- tailwindcss cdn link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jQuery app.js file link -->
+    <script src="jQuery/app.js"></script>
+
+    <!-- jQuery google cdn link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+    <!-- jquery -->
+    <script>
+        $('.button').click(function () {
+            $('ul').text($('input').val())
+
+            let li = $('<li>').html($('input').val())
+
+            let ul = $('ul')
+            let li1 = $('<li>').html('input').val()
+            let li2 = $('<li>').html($('input').val())
+
+            ul.append(li, li1, li2)
+        })
+
+        // trial style and events
+        $('p').css('color', 'blue')
+
+        $('.myBtn').click(function () {
+            $('p').hide($('p').text('hidden your Questions!').css('color', 'black'))
+
+        })
+
+        // password checkout
+        let pass = $('.buttons').click(function () {
+            if ($('.input1').val() === $('.input2').val()) {
+                alert('Successfully logged in')
+            } else if ($('.input1').val() === '' && $('.input2').val() === '') {
+                alert('Type your password!')
+            } else if ($('input1').val() != '') {
+                alert('Try again!')
+            } else {
+                alert('Wrong password!')
+            }
+        })
+
+        // animation (fadeIn-visible, fadeOut-invisible, fadeTo, slideUp, slideDown, slideToggle)
+        $('.buttons2').click(function () {
+            $('.p').slideToggle(2000)
+            $('.buttons2').css('margin-top', '30px')
+        })
+
+        // animate
+        $('.buttons3').click(function () {
+            $('.p-next').animate({
+                paddingBottom: '100px'
+            }, 1000)
+        })
+
+    </script>
+
+</body>
+
+</html>
